@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Renda Digital MZ - Transforme Seu Telemóvel em Renda</title>
+<meta name="facebook-domain-verification" content="2877023262487535" />
+
+<!-- Fonte Poppins -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+
+<style>
+  :root {
+    --neon-color: #00ffe7;
+    --text-light: #ccc;
+    --text-muted-dark: #666;
+    --bg-dark: #0d0d0d;
+    --bg-section: #111;
+  }
+
+  body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: var(--bg-dark);
+    color: #fff;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  /* VSL Section */
+  #vsl-section {
+    text-align: center;
+    padding: 60px 10% 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #vsl-section h1 {
+    font-size: 34px;
+    color: var(--neon-color);
+    margin-bottom: 20px;
+  }
+
+  #vsl-section p {
+    font-size: 18px;
+    color: var(--text-light);
+    margin-bottom: 30px;
+    max-width: 720px;
+  }
+
+  #vsl-section iframe {
+    width: 100%;
+    max-width: 720px;
+    height: 405px;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 0 25px rgba(0,255,231,0.2);
+  }
+
+  .neon-btn {
+    margin-top: 40px;
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--bg-dark);
+    background: var(--neon-color);
+    border: none;
+    border-radius: 8px;
+    box-shadow:
+      0 0 12px var(--neon-color),
+      0 0 30px var(--neon-color);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    text-transform: uppercase;
+  }
+
+  .neon-btn:hover {
+    background: var(--bg-dark);
+    color: var(--neon-color);
+    box-shadow:
+      0 0 20px var(--neon-color),
+      0 0 40px var(--neon-color);
+  }
+
+  /* Sobre */
+  #sobre {
+    padding: 60px 10%;
+    text-align: center;
+  }
+
+  #sobre h2 {
+    font-size: 28px;
+    color: var(--neon-color);
+    margin-bottom: 20px;
+  }
+
+  #sobre p {
+    font-size: 17px;
+    max-width: 700px;
+    margin: 0 auto 20px;
+    color: var(--text-light);
+  }
+
+  /* Depoimentos */
+  #depoimentos {
+    padding: 60px 10%;
+    text-align: center;
+  }
+
+  #depoimentos h2 {
+    font-size: 28px;
+    color: var(--neon-color);
+    margin-bottom: 20px;
+  }
+
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+  }
+
+  .card {
+    background: #1a1a1a;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 300px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0,255,231,0.05);
+  }
+
+  .card img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    border: 2px solid var(--neon-color);
+    box-shadow: 0 0 10px rgba(0,255,231,0.3);
+  }
+
+  .card p {
+    font-size: 15px;
+    margin-bottom: 10px;
+    color: #eee;
+  }
+
+  .card span {
+    font-size: 14px;
+    color: #888;
+  }
+
+  /* Garantia */
+  #garantia {
+    padding: 80px 10%;
+    background: var(--bg-section);
+    border: 2px solid var(--neon-color);
+    border-radius: 12px;
+    max-width: 800px;
+    margin: 60px auto;
+    text-align: center;
+  }
+
+  #garantia h2 {
+    font-size: 32px;
+    margin-bottom: 25px;
+    color: var(--neon-color);
+  }
+
+  #garantia p {
+    font-size: 20px;
+    color: var(--text-light);
+    line-height: 1.6;
+    max-width: 650px;
+    margin: 0 auto;
+  }
+
+  /* Chamada final */
+  .cta-final {
+    background: var(--bg-section);
+    padding: 60px 10%;
+    text-align: center;
+  }
+
+  .cta-final h2 {
+    font-size: 28px;
+    color: var(--neon-color);
+    margin-bottom: 20px;
+  }
+
+  /* Rodapé */
+  footer {
+    background: #000;
+    color: var(--text-muted-dark);
+    padding: 40px 10%;
+    text-align: center;
+    font-size: 14px;
+    border-top: 2px solid var(--neon-color);
+  }
+
+  footer p {
+    margin: 10px 0;
+  }
+
+  footer a {
+    color: var(--neon-color);
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+  }
+
+  footer a:hover {
+    color: #00ffe7cc;
+  }
+
+  /* Popup de saída */
+  #exit-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.7);
+    background: var(--bg-section);
+    border: 2px solid var(--neon-color);
+    border-radius: 15px;
+    padding: 30px 40px;
+    box-shadow: 0 0 30px var(--neon-color);
+    color: white;
+    z-index: 9999;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+  }
+
+  #exit-popup.show {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  #exit-popup h3 {
+    margin-bottom: 15px;
+    color: var(--neon-color);
+  }
+
+  #exit-popup p {
+    font-size: 16px;
+    margin-bottom: 25px;
+    color: var(--text-light);
+  }
+
+  #exit-popup button.close-btn {
+    background: var(--neon-color);
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    color: var(--bg-dark);
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    text-transform: uppercase;
+  }
+
+  #exit-popup button.close-btn:hover {
+    background: #00ccbe;
+  }
+
+  /* Contador de pessoas */
+  #people-counter {
+    position: fixed;
+    bottom: 120px;
+    right: 20px;
+    background: var(--bg-section);
+    border: 2px solid var(--neon-color);
+    padding: 12px 18px;
+    border-radius: 25px;
+    color: var(--neon-color);
+    font-weight: 600;
+    font-size: 14px;
+    box-shadow: 0 0 20px var(--neon-color);
+    user-select: none;
+    z-index: 9998;
+  }
+
+  /* Contador regressivo */
+  #countdown {
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #ff4f4f;
+    text-shadow: 0 0 8px #ff4f4faa;
+  }
+
+  /* Botão WhatsApp flutuante */
+  #whatsapp-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25d366;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    box-shadow: 0 0 15px #25d366;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+
+  #whatsapp-btn:hover {
+    background: #128c4a;
+  }
+
+  #whatsapp-btn svg {
+    fill: white;
+    width: 28px;
+    height: 28px;
+  }
+
+  @media (max-width: 768px) {
+    #vsl-section iframe {
+      height: 220px;
+    }
+
+    .cards {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .neon-btn {
+      width: 100%;
+      max-width: 320px;
+    }
+
+    #people-counter {
+      bottom: 180px;
+      right: 15px;
+      font-size: 13px;
+    }
+  }
+</style>
+
+<!-- Meta Pixel Code (substitua o ID abaixo pelo seu) -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '24266148316382784'); // Coloque seu Pixel ID aqui
+  fbq('track', 'PageView');
+</script>
+<noscript>
+  <img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=24266148316382784&ev=PageView&noscript=1" />
+</noscript>
+
+</head>
+<body>
+
+<!-- VSL Video Section -->
+<section id="vsl-section" aria-label="Vídeo explicativo sobre como transformar seu telemóvel em fonte de renda">
+  <h1>Como Ganhar 5.000 MZN por Mês Usando Apenas Teu Celular (Mesmo Sem Experiência)</h1>
+  <p>Assista ao vídeo abaixo e descubra como pessoas comuns estão lucrando todos os dias com o celular.</p>
+
+  <iframe src="https://www.youtube.com/embed/_Hv-mK10YRI" allowfullscreen title="Vídeo explicativo"></iframe>
+
+  <a href="https://venduspay.com/checkout.html?id=3188" class="neon-btn" role="button">Quero Começar Agora</a>
+
+  <div id="countdown" aria-live="polite" aria-atomic="true">Oferta termina em: 15:00</div>
+</section>
+
+<!-- Sobre -->
+<section id="sobre" aria-label="Informações sobre a oportunidade de renda digital">
+  <h2>Uma nova forma de gerar renda</h2>
+  <p>
+    Existe um caminho simples e acessível para transformar seu tempo livre em lucro real. Tudo o que você precisa já está nas suas mãos.
+  </p>
+  <p>
+    Essa é a oportunidade ideal para quem quer independência, flexibilidade e crescimento pessoal — usando ferramentas digitais acessíveis.
+  </p>
+</section>
+
+<!-- Depoimentos com Imagem -->
+<section id="depoimentos" aria-label="Depoimentos de participantes satisfeitos">
+  <h2>O que dizem os participantes</h2>
+  <div class="cards">
+    <div class="card">
+      <img src="imagem/Ana.jpg" alt="Foto de Ana" />
+      <p>“Estou surpresa com os resultados. Nunca imaginei que meu celular poderia gerar essa renda.”</p>
+      <span>— Ana M., Maputo</span>
+    </div>
+    <div class="card">
+      <img src="imagem/12e0036ad648d6860e881889c44618c2.jpg" alt="Foto de Nelson" />
+      <p>“Fácil de aplicar, direto ao ponto. Ideal para quem quer uma renda online real.”</p>
+      <span>— Nelson J., Beira</span>
+    </div>
+    <div class="card">
+      <img src="imagem/ivone.jpg" alt="Foto de ivone" />
+      <p>“Não é mágica, é método. E funciona!”</p>
+      <span>— ivone L., Nampula</span>
+    </div>
+  </div>
+</section>
+
+<!-- Garantia -->
+<section id="garantia" aria-label="Garantia de satisfação do produto">
+  <h2>Garantia Incondicional de 7 Dias</h2>
+  <p>
+    Se por qualquer motivo você não ficar satisfeito, devolvemos 100% do seu investimento. Sem perguntas, sem riscos.
+  </p>
+</section>
+
+<!-- Chamada final -->
+<section class="cta-final" aria-label="Chamada para ação final">
+  <h2>Está pronta(o) para dar o próximo passo?</h2>
+  <a href="https://venduspay.com/checkout.html?id=3188" class="neon-btn" role="button">Sim! Quero começar</a>
+</section>
+
+<!-- Popup Última Chance -->
+<div id="exit-popup" role="dialog" aria-modal="true" aria-labelledby="popup-title" aria-describedby="popup-desc">
+  <h3 id="popup-title">Espere!</h3>
+  <p id="popup-desc">Antes de sair, aproveite esta oferta exclusiva! Restam poucos minutos.</p>
+  <button class="close-btn" aria-label="Fechar popup">Quero aproveitar</button>
+</div>
+
+<!-- Contador pessoas online -->
+<div id="people-counter" aria-live="polite" aria-atomic="true">20 pessoas estão entrando agora...</div>
+
+<!-- Botão WhatsApp flutuante -->
+<a id="whatsapp-btn" href="https://wa.me/258xxxxxxxxx" target="_blank" rel="noopener" aria-label="Contato via WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.1 283.9 32 224.1 32 100.3 32 0 132.3 0 256c0 45 14.8 86.9 39.9 121.7L0 480l102.4-38.7c33.5 18.3 71.5 28 111.7 28 123.8 0 224.1-100.3 224.1-224 0-59.9-23.1-114.9-67.3-157.2zM224.1 438c-34.8 0-67.2-11.5-93.1-30.9l-6.7-4-60.9 23 20.5-59.5-4.3-7c-18.1-29.3-27.6-63.2-27.6-98.7 0-105.9 86.1-192 192.1-192 51.4 0 99.7 20 135.9 56.3 36.3 36.2 56.3 84.5 56.3 136 0 105.9-86.1 192-192.1 192zm101-138.4c-5.6-2.8-33.3-16.4-38.4-18.3-5.2-1.9-8.9-2.8-12.6 2.8-3.6 5.6-13.9 18.3-17 22.1-3.1 3.8-6.3 4.3-11.8 1.5-5.6-2.8-23.8-8.8-45.4-28-16.8-15-28-33.4-31.3-39-3.3-5.6-.4-8.6 2.4-11.4 2.5-2.5 5.6-6.3 8.4-9.4 2.8-3.1 3.7-5.6 5.6-9.4 1.9-3.8 1-7.1-.5-9.9-1.5-2.8-12.6-30.4-17.2-41.6-4.5-11-9.1-9.5-12.6-9.7-3.3-.2-7.1-.2-10.8-.2-3.8 0-9.9 1.4-15.1 7-5.2 5.6-19.9 19.5-19.9 47.6s20.4 55.3 23.2 59.2c2.8 3.8 40.2 61.4 97.5 86.1 13.6 5.9 24.2 9.4 32.5 12 13.6 4 26 3.4 35.9 2.1 10.9-1.5 33.3-13.6 38-26.8 4.7-13.2 4.7-24.5 3.3-26.8-1.4-2.3-5.2-3.7-10.8-6.5z"/></svg>
+</a>
+
+<!-- Rodapé -->
+<footer>
+  <p>&copy; 2025 Renda Digital MZ. Todos os direitos reservados.</p>
+  <p>
+    <a href="#vsl-section">Início</a> |
+    <a href="#sobre">Sobre</a> |
+    <a href="#depoimentos">Depoimentos</a> |
+    <a href="#garantia">Garantia</a>
+  </p>
+  <p>Contato: <a href="mailto:contato@rendadigitalmz.com">contato@rendadigitalmz.com</a></p>
+</footer>
+
+<script>
+  // Contador regressivo de 15 minutos
+  let timeLeft = 15 * 60;
+  const countdownElem = document.getElementById('countdown');
+
+  function formatTime(t) {
+    const min = Math.floor(t / 60).toString().padStart(2, '0');
+    const sec = (t % 60).toString().padStart(2, '0');
+    return `${min}:${sec}`;
+  }
+
+  function updateCountdown() {
+    if(timeLeft <= 0){
+      countdownElem.textContent = "Oferta encerrada!";
+      return;
+    }
+    countdownElem.textContent = "Oferta termina em: " + formatTime(timeLeft);
+    timeLeft--;
+  }
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+
+  // Popup de saída - mostra quando o mouse tenta sair da janela (desktop)
+  const exitPopup = document.getElementById('exit-popup');
+  const closeBtn = exitPopup.querySelector('.close-btn');
+  let popupShown = false;
+
+  function showPopup() {
+    if (!popupShown) {
+      exitPopup.classList.add('show');
+      popupShown = true;
+    }
+  }
+
+  closeBtn.addEventListener('click', () => {
+    exitPopup.classList.remove('show');
+  });
+
+  document.addEventListener('mouseout', function(e) {
+    if (e.clientY < 10) {
+      showPopup();
+    }
+  });
+
+  // Contador dinâmico "20 pessoas entrando"
+  const peopleCounter = document.getElementById('people-counter');
+  let peopleCount = 20;
+  let increment = true;
+
+  setInterval(() => {
+    if (peopleCount >= 30) increment = false;
+    else if (peopleCount <= 15) increment = true;
+
+    peopleCount += increment ? 1 : -1;
+    peopleCounter.textContent = peopleCount + " pessoas estão entrando agora...";
+  }, 4000);
+</script>
+
+</body>
+</html>
